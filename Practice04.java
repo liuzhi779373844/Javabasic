@@ -1,46 +1,32 @@
-package Java43_javabasic_chpater05_homework;
+package java43_javabasic_chapter06_homework;
 
 import java.util.Scanner;
 
 public class Practice04 {
 	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in);
-		System.out.println("欢迎使用MyShopping管理系统\n");
-		System.out.println("*****************************");
-		System.out.println("\t\t1、真情客户管理系统");
-		System.out.println("\t\t2、真购物结算");
-		System.out.println("\t\t3、真情回馈");
-		System.out.println("\t\t4、注销");
-		System.out.println("*****************************\n");
-		boolean isRight = true;
+		//定义三个变量，分别存储用户名、用户密码、和输入额用户次数；
+		String name = "jim";
+		int code = 123456;
+		int i = 0;
+		Scanner input =new  Scanner(System.in);
 		
-		do{
-			System.out.println("请选择，输入数字：");
-			int number = input.nextInt();
-			switch(number){
-			case 1:
-				System.out.println("执行客户管理系统");
-				isRight = true;
+		for(i=1;i<=3;i++){
+			System.out.println("\n请输入用户名：");
+			name = input.next();
+			System.out.println("请输入密码：");
+			code = input.nextInt();
+			if(name.equals("jim") && code == 123456){
+				System.out.println("欢迎登陆MyShopping系统！");
 				break;
-			case 2:
-				System.out.println("执行购物结算");
-				isRight = true;
-				break;
-			 case 3:
-				System.out.println("执行真情回馈");
-				isRight = true;
-				break;
-			case 4:
-				System.out.println("注销");
-				isRight = true;
-				break;
-			default:
-				System.out.println("输入有误，请输入正确的数字！");
-				isRight = false;
-				break;
+			}else {
+				int j = 3-i;
+				System.out.println("输入错误！您还有"+j+"次机会！");
+				if(j==0){
+					System.out.println("对不起，您三次均输入错误！");
+				}
 			}
-		}while(isRight==false);
-		
-	System.out.println("程序结束！");
+			
+		}
+		System.out.println("感谢使用本程序！");
 	}
 }

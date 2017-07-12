@@ -1,19 +1,28 @@
-package Java43_javabasic_chpater05_homework;
+package java43_javabasic_chapter06_homework;
+
+import java.util.Scanner;
 
 public class Extand02 {
+
 	public static void main(String[] args) {
-		//1-10的阶乘
-		int i = 1;
-		int number=1;
-		/*while(i<=10){
-			number *= i;
-			i++;
-		}*/
-		
-		do{
-			number *= i;
-			i++;
-		}while(i<=10);
-		System.out.println("10的阶乘为："+number);
+		// TODO Auto-generated method stub
+		// 判断一个数是不是质数，并将判断结果输出
+		// 键盘录入
+		Scanner input = new Scanner(System.in);
+		System.out.println("请输入一个正整数：");
+		int num = input.nextInt();
+		// 从2开始取余，等于零就停止判断，若i等于num就是质数，否则就不是质数
+		int i;
+		for (i = 2;; i++) {
+			if (num % i == 0) {
+				break;
+			}
+		}
+		if (num == i) {
+			System.out.println(num + "是质数。");
+		} else {
+			System.out.println(num + "不是质数。");
+		}
 	}
+
 }

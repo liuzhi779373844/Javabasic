@@ -1,64 +1,29 @@
-package Java43_javabasic_chpater05_homework;
+package java43_javabasic_chapter06_homework;
 
 import java.util.Scanner;
 
 public class Practice03 {
-
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		double shirtPrice = 245.0;
-		double shoePrice = 570.0;
-		double PadPrice = 320.0;
-		int amount = 0;
-		double discount = 0.8;
-		double total = 0;
-		double zong = 0;
-		double payment = 0;
-		String reply = "y";
-
-		System.out.println("MyShopping管理系统 > 购物结算");
-		System.out.println("\n**************************");
-		System.out.println("请选择选购的商品编号：");
-		System.out.println("1、T恤\t2、网球鞋\t3、网球拍");
-		System.out.println("\n**************************");
-
 		Scanner input = new Scanner(System.in);
-
-		do {
-			System.out.print("请输入商品编号：");
-			int number1 = input.nextInt();// 编号
-			System.out.print("请输入购买数量：");
-			int number2 = input.nextInt();// 数量
-			switch (number1) {
-			case 1:
-				total = shirtPrice * number2;
-				System.out.println("T恤 ￥245.0\t数量" + number2 + "合计" + total);
-				break;
-			case 2:
-				total = shoePrice * number2;
-				System.out.println("网球鞋 ￥570.0\t数量" + number2 + "合计" + total);
-
-				break;
-			case 3:
-				total = PadPrice * number2;
-				System.out.println("网球拍 ￥320.0\t数量" + number2 + "合计" + total);
-
-				break;
-			default:
-				System.out.println("查无此货！滚蛋！！！");
-				break;
+		System.out.println("MyShopping管理系统 >客户管理系统>添加客户信息\n");
+		int custNo = 0;
+		String birthday;
+		int point = 0;
+		for (int i = 1; i <= 3; i++) {
+			System.out.println("请输入会员号（4位整数）：");
+			custNo = input.nextInt();
+			System.out.println("请输入会员生日（月/日<用两位整数表示>）：");
+			birthday = input.next();
+			System.out.println("请输入会员积分：");
+			point = input.nextInt();
+			if (custNo > 9999 || custNo < 1000) {
+				System.out.println("客户号" + custNo + "是无效会员号");
+				System.out.println("录入信息失败！");
+				continue;
 			}
-
-			zong += total;
-			System.out.print("是否继续（n/y）：");
-			reply = input.next();
-		} while ("y".equals(reply));
-
-		System.out.println("折扣：" + discount);
-		System.out.println("应付金额：" + zong * discount);
-		System.out.print("实付金额为");
-		payment = input.nextDouble();
-		System.out.println("找钱：" + (payment - zong * discount));
+			System.out.println("您录入的信息为：");
+			System.out.println(custNo + " " + birthday + " " + point + "\n");
+		}
+		System.out.println("程序结束！");
 	}
-
 }

@@ -1,33 +1,20 @@
-package Java43_javabasic_chpater05_homework;
-
-import java.util.Scanner;
+package java43_javabasic_chapter06_homework;
 
 public class Extand04 {
+
 	public static void main(String[] args) {
-		int number;
-		Scanner input = new Scanner(System.in);
-		System.out.println("请输入一个正整数：");
-		number = input.nextInt();
-		//将int类型转换成字符串，再转换成字符数组
-		/*String y = Integer.toString(number);
-		//字符串转换成数组
-		//或者一步到位：
-		// 
-		*/
-		char [] chs = Integer.toString(number).toCharArray();
-		
-		int i=0;
-		char temp;
-		for(i=0;i<chs.length/2;i++){
-			temp = chs[i];
-			chs[i] = chs[chs.length-1-i];
-			chs[chs.length-1-i] = temp;
-			
+		// TODO Auto-generated method stub
+		// 青蛙爬进的题目：井深7米，青蛙白天爬3米，晚上下坠2米；几天爬出；
+		int count, num;
+		for (count = 0, num = 0;;) {
+			count++;
+			num += 3;
+			if (num >= 7) {
+				break;
+			}
+			num -= 2;
 		}
-		//重新字符串，再生成数字
-		
-		String str = new String(chs);
-		int fanzhuan = Integer.valueOf(str);
-		System.out.println("反转之后的数字："+fanzhuan);
+		System.out.println("青蛙第" + count + "天爬出7米深的井。");
 	}
+
 }
