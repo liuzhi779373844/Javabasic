@@ -1,16 +1,22 @@
-package java43_javabasic_chapter06_homework;
+package java43_javabasic_chapter07_homework;
 
 public class Practice01 {
-
 	public static void main(String[] args) {
-		// 计算100以内的奇数之和
-
-		int num = 0;
-		int sum = 0;
-		for (num = 1; num <= 100; num++) {
-			sum += num;
+//		String goods[]=new String [5];
+//		String goodss[]= new String[]{"我","爱","你"};
+//		String goodsss[]={"ha","ha","ha"};
+		String []goods=new String [5];
+		String []goodss= new String[]{"我","爱","你"};
+		String []goodsss={"ha","ha","ha"};
+		goods[0]="Nike背包";
+		goods[1]="Adidas运动衫";
+		goods[2]="李宁运动鞋";
+		goods[3]="Kappa外套";
+		goods[4]="361°腰包";
+		System.out.println("背刺获得特价商品有：");
+		for(int i=0;i<goods.length;i++){
+			System.out.println(goods[i]);
 		}
-		System.out.println("100以内的奇数之和为：" + sum);
+		
 	}
-
 }

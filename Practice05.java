@@ -1,14 +1,26 @@
-package Java43_javabasic_chpater05_homework;
+package java43_javabasic_chapter07_homework;
 
+import java.util.Scanner;
 
-//循环结构解决问题额一般步骤为：确定循环条件，确定循环体，然后写代码就行了
 public class Practice05 {
 	public static void main(String[] args) {
-		int number = 100;
-		while(number>=5){
-			System.out.println(number);
-			number -= 5;
+
+		int[] price = new int[4];
+		// 循环录入
+		Scanner input = new Scanner(System.in);
+		System.out.println("请输入4家店的价格:");
+		for (int i = 0; i < price.length; i++) {
+			System.out.print("第" + (i + 1) + "家店的价格:" );
+			price[i] = input.nextInt();
 		}
 		
+		// 求价格最小值
+		int min = price[0];
+		for (int i = 1; i < price.length; i++) {
+			if (min > price[i]) {
+				min = price[i];
+			}
+		}
+		System.out.println("最低价格为："+min);
 	}
 }

@@ -1,32 +1,44 @@
-package java43_javabasic_chapter06_homework;
+package java43_javabasic_chapter07_homework;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Practice04 {
 	public static void main(String[] args) {
-		//定义三个变量，分别存储用户名、用户密码、和输入额用户次数；
-		String name = "jim";
-		int code = 123456;
-		int i = 0;
-		Scanner input =new  Scanner(System.in);
-		
-		for(i=1;i<=3;i++){
-			System.out.println("\n请输入用户名：");
-			name = input.next();
-			System.out.println("请输入密码：");
-			code = input.nextInt();
-			if(name.equals("jim") && code == 123456){
-				System.out.println("欢迎登陆MyShopping系统！");
-				break;
-			}else {
-				int j = 3-i;
-				System.out.println("输入错误！您还有"+j+"次机会！");
-				if(j==0){
-					System.out.println("对不起，您三次均输入错误！");
-				}
-			}
-			
+		char [] character = new char[9];
+		// char character[] = { 'a', 'c', 'u', 'b', 'e', 'p', 'f', 'z' };
+		Scanner input = new Scanner(System.in);
+		System.out.println("请录入8个字符：");
+		for (int i = 0; i < character.length - 1; i++) {
+			character[i] = input.next().charAt(0);
 		}
-		System.out.println("感谢使用本程序！");
+//		Arrays.sort(character);(有一个数据未赋值直接排序的话就会出错，数据减少，空的那个跑到最前面，长度不变就少)
+		System.out.print("原字符序列：");
+		for (int i = 0; i < character.length-1; i++) {
+			System.out.print(character[i] + "\t");
+		}
+		System.out.print("\n待插入的字符是:");
+
+		char chs = input.next().charAt(0);
+
+		// 找到插入的位置
+		int index = 0;
+		for (int i = 0; i < character.length-1; i++) {
+			if (chs < character[i]) {
+				index = i;
+				break;
+			}
+		}
+		// 元素位置后移
+		for (int i = character.length - 1 ; i > index; i--) {
+			character[i] = character[i - 1];
+		}
+		// 插入
+		character[index] = chs;
+		// 循环输出
+		System.out.println("插入后的字符序列是:");
+		for (int i = 0; i < character.length; i++) {
+			System.out.print(character[i] + "\t");
+		}
 	}
 }
